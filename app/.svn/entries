@@ -1,0 +1,43 @@
+10
+
+dir
+11984
+http://svn.redmine.org/redmine/branches/2.3-stable/app
+http://svn.redmine.org/redmine
+
+
+
+2013-06-08T11:39:56.489590Z
+11945
+tmaruyama
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+e93f8b46-1217-0410-a6f0-8f06a7374b81
+
+controllers
+dir
+
+sweepers
+dir
+
+views
+dir
+
+helpers
+dir
+
+models
+dir
+

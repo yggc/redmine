@@ -1,0 +1,8 @@
+<div style='border:solid 1px #BFBFBF; margin-bottom:20px; padding:10px;'>
+  <h4 style='margin:5px;'><%= link_to h(document.title), document_path(document) %></h4>
+  <p><em><%= format_time(document.updated_on) %></em></p>
+  
+  <div class="wiki">
+    <%= textilizable(truncate_lines(document.description), :object => document) %>
+  </div>
+</div>
