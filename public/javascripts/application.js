@@ -290,6 +290,18 @@ function submit_query_form(id) {
   $('#'+id).submit();
 }
 
+function params_add_ids(id){
+  var checkedValues = new Array();
+  $("input[name='ids[]']").each(function(){
+    if($(this).is(':checked'))
+    {
+      checkedValues.push($(this).val());
+    }
+  });
+  ac = $('#'+id).attr("action");
+  $('#'+id).attr("action", ac + "&ids=" + checkedValues.join(','))
+}
+
 function showTab(name) {
   $('div#content .tab-content').hide();
   $('div.tabs a').removeClass('selected');
