@@ -80,7 +80,7 @@
     <label><%= check_box_tag 'description', '1', @query.has_column?(:description) %> <%= l(:field_description) %></label>
   </p>
   <p class="buttons">
-    <%= submit_tag l(:button_export), :name => nil, :onclick => "params_add_ids('csv-export-form');hideModal(this);" %>
+    <%= submit_tag l(:button_export), :name => nil, :onclick => "hideModal(this);" %>
     <%= submit_tag l(:button_cancel), :name => nil, :onclick => "hideModal(this);", :type => 'button' %>
   </p>
   <% end %>
