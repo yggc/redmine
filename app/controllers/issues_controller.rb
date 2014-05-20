@@ -77,6 +77,10 @@ class IssuesController < ApplicationController
                               :order => sort_clause,
                               :offset => @offset,
                               :limit => @limit)
+      if params[:checkbox_ids].present?
+        ids = params[:checkbox_ids].split(',')
+        @issues = Issue.where(id: ids)
+      end
       @issue_count_by_group = @query.issue_count_by_group
 
       respond_to do |format|

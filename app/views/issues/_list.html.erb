@@ -15,7 +15,7 @@
     </tr>
   </thead>
   <% previous_group = false %>
-  <tbody>
+  <tbody id="issues_body">
   <% issue_list(issues) do |issue, level| -%>
   <% if @query.grouped? && (group = @query.group_by_column.value(issue)) != previous_group %>
     <% reset_cycle %>
