@@ -563,12 +563,12 @@ function warnLeavingUnsaved(message) {
 function setupAjaxIndicator() {
 
   $('#ajax-indicator').bind('ajaxSend', function(event, xhr, settings) {
-  
+
     if ($('.ajax-loading').length === 0 && settings.contentType != 'application/octet-stream') {
       $('#ajax-indicator').show();
     }
   });
-  
+
   $('#ajax-indicator').bind('ajaxStop', function() {
     $('#ajax-indicator').hide();
   });
@@ -600,3 +600,13 @@ function blockEventPropagation(event) {
 $(document).ready(setupAjaxIndicator);
 $(document).ready(hideOnLoad);
 $(document).ready(addFormObserversForDoubleSubmit);
+
+function filterCheckboxes () {
+  var ids = $('tbody#issues_body tr input:checkbox:checked').map(function(){ return this.value}).get().join();
+  $('.field_checkbox_ids').val(ids);
+}
+
+function filterCheckboxesMerge (item) {
+  var ids = $('tbody#issues_body tr input:checkbox:checked').map(function(){ return this.value}).get().join();
+  location.href = item.href + ('&checkbox_ids=' + ids);
+}
